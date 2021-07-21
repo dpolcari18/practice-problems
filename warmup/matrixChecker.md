@@ -1,0 +1,1 @@
+Given array of arrays of integers, where arr.length === 3, return array of booleans for each 3 x 3 possible matrix. Matrix is true if it contains each integer from 1 through 9.
