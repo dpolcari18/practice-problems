@@ -7,20 +7,41 @@ const findTargetCombos = (arr, target) => {
 
     // iterate through arr and store target value with index
     for (let i = 0; i < arr.length; i++) {
-        let targetDiff = target - arr[i]
+        let value = arr[i]
+        let targetDiff = target - value
 
-        hashMap[targetDiff] = arr[i]
         
-        if (hashMap[arr[i]]) {
-            console.log(i)
-            results.push([hashMap[arr[i]], arr[i]])
+        if (hashMap[value] !== undefined) {
+            results.push([hashMap[value], i])
             continue
+        } else {
+            hashMap[targetDiff] = i
         }
         
 
     }
+
     console.log(results)
 }
+// const findTargetCombos = (arr, target) => {
+//     // define answer arr and hash table
+//     let results = [], hashMap = {}
+
+//     // iterate through arr and store target value with index
+//     for (let i = 0; i < arr.length; i++) {
+//         let targetDiff = target - arr[i]
+
+//         hashMap[targetDiff] = arr[i]
+        
+//         if (hashMap[arr[i]]) {
+//             results.push([hashMap[arr[i]], arr[i]])
+//             continue
+//         }
+        
+
+//     }
+//     console.log(results)
+// }
 
 findTargetCombos(prices, targetPrice)
 
